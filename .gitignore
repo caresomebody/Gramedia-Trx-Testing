@@ -5,7 +5,7 @@ build/
 !**/src/test/**/build/
 target/serenity-reports
 target/site
-target/
+target/site/serenity
 
 ### IntelliJ IDEA ###
 .idea/modules.xml
