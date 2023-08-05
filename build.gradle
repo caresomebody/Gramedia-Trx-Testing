@@ -1,19 +1,38 @@
-plugins {
-    id 'java'
-    id 'application'
-    id 'org.javamodularity.moduleplugin' version '1.8.12'
-    id 'org.openjfx.javafxplugin' version '0.0.13'
-    id 'org.beryx.jlink' version '2.25.0'
+defaultTasks 'clean', 'test', 'aggregate'
+
+repositories {
+    mavenCentral()
+    mavenLocal()
 }
+
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "net.serenity-bdd:serenity-gradle-plugin:3.9.8"
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: "net.serenity-bdd.serenity-gradle-plugin"
 
 group 'com.caresomebody'
 version '1.0-SNAPSHOT'
 
-repositories {
-    mavenCentral()
-}
-
 ext {
+    serenity_version = '3.9.7'
+    junit_platform_launcher_version="1.9.3"
+    cucumber_junit_platform_engine_version="7.2.3"
+    junit_platform_suite_version="1.9.3"
+    junit_jupiter_engine_version="5.9.3"
+    junit_vintage_engine_version="5.9.3"
+    logback_classic_version="1.2.10"
+    assertj_core_version="3.23.1"
     junitVersion = '5.9.1'
 }
 
@@ -22,16 +41,6 @@ targetCompatibility = '17'
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
-}
-
-application {
-    mainModule = 'com.caresomebody.gramediaautomation'
-    mainClass = 'com.caresomebody.gramediaautomation.HelloApplication'
-}
-
-javafx {
-    version = '17.0.2'
-    modules = ['javafx.controls', 'javafx.fxml']
 }
 
 dependencies {
@@ -50,20 +59,26 @@ dependencies {
     implementation group: 'org.seleniumhq.selenium', name: 'selenium-server', version: '3.141.59'
     implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.7.2'
     implementation group: 'org.seleniumhq.selenium', name: 'selenium-chrome-driver', version: '4.7.2'
+
+    testImplementation "net.serenity-bdd:serenity-core:${serenity_version}"
+    testImplementation "net.serenity-bdd:serenity-cucumber:${serenity_version}"
+    testImplementation "net.serenity-bdd:serenity-screenplay:${serenity_version}"
+    testImplementation "net.serenity-bdd:serenity-screenplay-webdriver:${serenity_version}"
+    testImplementation "net.serenity-bdd:serenity-ensure:${serenity_version}"
+    testImplementation "org.junit.platform:junit-platform-launcher:${junit_platform_launcher_version}"
+    testImplementation "io.cucumber:cucumber-junit-platform-engine:${cucumber_junit_platform_engine_version}"
+    testImplementation "org.junit.platform:junit-platform-suite:${junit_platform_suite_version}"
+    testImplementation "org.junit.jupiter:junit-jupiter-engine:${junit_jupiter_engine_version}"
+    testImplementation "org.junit.vintage:junit-vintage-engine:${junit_vintage_engine_version}"
+    implementation "ch.qos.logback:logback-classic:${logback_classic_version}"
+    testImplementation "org.assertj:assertj-core:${assertj_core_version}"
+
 }
 
 test {
     useJUnitPlatform()
 }
 
-jlink {
-    imageZip = project.file("${buildDir}/distributions/app-${javafx.platform.classifier}.zip")
-    options = ['--strip-debug', '--compress', '2', '--no-header-files', '--no-man-pages']
-    launcher {
-        name = 'app'
-    }
-}
+gradle.startParameter.continueOnFailure = true
 
-jlinkZip {
-    group = 'distribution'
-}
+test.finalizedBy(aggregate)
