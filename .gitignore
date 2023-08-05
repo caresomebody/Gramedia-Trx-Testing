@@ -6,6 +6,7 @@ build/
 target/serenity-reports/
 target/site/
 target/site/serenity/
+target/
 
 ### IntelliJ IDEA ###
 .idea/modules.xml
