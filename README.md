@@ -1,9 +1,10 @@
-# Gramedia Transaction Automation Testing
+# 📖 Gramedia Transaction Automation Testing
+created by Ali Naufal Ammarullah (alinaufal00@gmail.com)
 
-# Overview
+# 💡 Overview
 Gramedia is an Indonesian bookstore owned by Kompas Gramedia. Established in 1970, Gramedia Asri Media has contributed to give inspiration through knowledge, endeavor and direct participation to society for more than 50 years. This automation is created to automate some of transaction flow in Gramedia.com, however, **the automation is only up to choosing payment method **since the environment of this website is production.
 
-## Test Cases
+## 📄 Test Cases
 
 |Test ID|Test Case| Test Step |
 |--|--|--|
@@ -53,36 +54,12 @@ Gramedia is an Indonesian bookstore owned by Kompas Gramedia. Established in 197
 
 ***Not Automated Yet**
 
-## Automation Tools
+## 💻 Automation Tools
 This automation is build using **Selenium**, **Cucumber**, and **Serenity BDD**.
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Selenium_Logo.png" width="200"> <img src="https://cdn.freebiesupply.com/logos/large/2x/cucumber-logo-svg-vector.svg" width="200"> <img src="https://avatars.githubusercontent.com/u/9455201?s=280&v=4" width="200">
 
-## File Structure
-
-| src
-
-|-- test
-
-|   |-- java
-
-|   |  |-- mappers
-
-|   |  |   |-- mappers
-
-|   |  |-- StepDefinition
-
-|   |  |   |-- stepdef
-
-|   |  |-- testRunner
-
-|   |-- resources
-
-|   |  |-- Feature
-
-|   |  |   |-- gramediaTrx.feature
-
-## How To Run
+## ⚙️ How To Run
 
 1. Since this automation is using EdgeDriver, you should follow the instruction and download it from here [Use WebDriver to automate Microsoft Edge - Microsoft Edge Development | Microsoft Learn](https://learn.microsoft.com/en-us/microsoft-edge/webdriver-chromium/?tabs=c-sharp)
 2. Build gradle
@@ -91,6 +68,6 @@ This automation is build using **Selenium**, **Cucumber**, and **Serenity BDD**.
  ./gradlew clean test -Dcucumber.filter.tags="@Gramedia"
 ```
 
-## Test Results
+## ✅ Test Results
 ![image](https://github.com/caresomebody/Gramedia-Trx-Testing/assets/48080443/5fd76340-00cf-4d53-995b-d8e79676c692)
 
