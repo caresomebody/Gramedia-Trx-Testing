@@ -5,51 +5,51 @@ Gramedia is an Indonesian bookstore owned by Kompas Gramedia. Established in 197
 
 ## Test Cases
 
-|Test Case| Test Step |
-|--|--|
-| As a user, I want to add the product to the cart | Given user search a product|
-| | When user click the product |
-| | And click the book format |
-| | And click warehouse |
-| | And click “Keranjang"|
-| | Then I can see pop up showing “Berhasil Dimasukkan ke Tas Belanja!” |
-| As a user, I want to see products in my cart| Given user on Gramedia homepage|
-| | When user click cart icon |
-| | Then user can see products in cart|
-| As a user, I want to remove product from cart| Given user have 1 product in cart|
-| | When user click cart icon |
-| | And user click “Lihat Keranjang”|
-| | And user can see products in cart|
-| | And user click “Hapus” in products|
-| | And user see pop-up confirmation|
-| | And user click “Hapus”|
-| | Then cart will be empty|
-| As a user, I can see total payment after I reduce quantity of the products*| Given user have 1 product in cart|
-| | When user click cart icon |
-| | And user click “Lihat Keranjang”|
-| | And user can see products in cart|
-| | And user click “-” button|
-| | Then quantity product will reduce|
-| | And total payment will reduce|
-| As a user, I can see total payment after I add quantity of the products*| Given user have 1 product in cart|
-| | When user click cart icon |
-| | And user click “Lihat Keranjang”|
-| | And user can see products in cart|
-| | And user click “+” button|
-| | Then quantity product will increase|
-| | And total payment will increase|
-| As a user, I want to checkout my cart| Given user have 1 product in cart|
-| | When user click cart icon |
-| | And user click “Lihat Keranjang”|
-| | And user can see products in cart|
-| | When user click “Lanjut ke Pembayaran”|
-| | And user click “Metode Pengiriman”|
-| | And user choose delivery method|
-| | And user click “Metode Pembayaran"|
-| | And user choose payment method|
-| | And user click “Pilih Pembayaran|
-| | And user click “Bayar”|
-| | Then user will see payment progress page|
+|Test ID|Test Case| Test Step |
+|--|--|--|
+|GRA-001| As a user, I want to add the product to the cart | Given user search a product|
+|| | When user click the product |
+|| | And click the book format |
+|| | And click warehouse |
+|| | And click “Keranjang"|
+|| | Then I can see pop up showing “Berhasil Dimasukkan ke Tas Belanja!” |
+|GRA-002| As a user, I want to see products in my cart| Given user on Gramedia homepage|
+|| | When user click cart icon |
+|| | Then user can see products in cart|
+|GRA-003| As a user, I want to remove product from cart| Given user have 1 product in cart|
+|| | When user click cart icon |
+|| | And user click “Lihat Keranjang”|
+|| | And user can see products in cart|
+|| | And user click “Hapus” in products|
+|| | And user see pop-up confirmation|
+|| | And user click “Hapus”|
+|| | Then cart will be empty|
+|GRA-004| As a user, I can see total payment after I reduce quantity of the products*| Given user have 1 product in cart|
+|| | When user click cart icon |
+|| | And user click “Lihat Keranjang”|
+|| | And user can see products in cart|
+|| | And user click “-” button|
+|| | Then quantity product will reduce|
+|| | And total payment will reduce|
+|GRA-005| As a user, I can see total payment after I add quantity of the products*| Given user have 1 product in cart|
+|| | When user click cart icon |
+|| | And user click “Lihat Keranjang”|
+|| | And user can see products in cart|
+|| | And user click “+” button|
+|| | Then quantity product will increase|
+|| | And total payment will increase|
+|GRA-006| As a user, I want to checkout my cart| Given user have 1 product in cart|
+|| | When user click cart icon |
+|| | And user click “Lihat Keranjang”|
+|| | And user can see products in cart|
+|| | When user click “Lanjut ke Pembayaran”|
+|| | And user click “Metode Pengiriman”|
+|| | And user choose delivery method|
+|| | And user click “Metode Pembayaran"|
+|| | And user choose payment method|
+|| | And user click “Pilih Pembayaran|
+|| | And user click “Bayar”|
+|| | Then user will see payment progress page|
 
 ***Not Automated Yet**
 
@@ -90,3 +90,7 @@ This automation is build using **Selenium**, **Cucumber**, and **Serenity BDD**.
 ```
  ./gradlew clean test -Dcucumber.filter.tags="@Gramedia"
 ```
+
+## Test Results
+![image](https://github.com/caresomebody/Gramedia-Trx-Testing/assets/48080443/5fd76340-00cf-4d53-995b-d8e79676c692)
+
