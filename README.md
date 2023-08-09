@@ -2,7 +2,7 @@
 created by Ali Naufal Ammarullah (alinaufal00@gmail.com)
 
 # 💡 Overview
-Gramedia is an Indonesian bookstore owned by Kompas Gramedia. Established in 1970, Gramedia Asri Media has contributed to give inspiration through knowledge, endeavor and direct participation to society for more than 50 years. This automation is created to automate some of transaction flow in Gramedia.com, however, **the automation is only up to choosing payment method **since the environment of this website is production.
+Gramedia is an Indonesian bookstore owned by Kompas Gramedia. Established in 1970, Gramedia Asri Media has contributed to give inspiration through knowledge, endeavor and direct participation to society for more than 50 years. This automation is created to automate some of transaction flow in Gramedia.com, however, **the automation is only up to choosing payment method** since the environment of this website is production.
 
 ## 📄 Test Cases
 
