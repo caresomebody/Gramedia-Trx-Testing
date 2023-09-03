@@ -1,4 +1,4 @@
-# 📖 Gramedia Transaction Automation Testing
+# 📖 Bookstore Transaction Automation Testing
 created by Ali Naufal Ammarullah (alinaufal00@gmail.com)
 
 # 💡 Overview
